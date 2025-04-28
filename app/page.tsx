@@ -1,14 +1,15 @@
 import Draggable from "@/components/drag-drop";
 import TestAos from "@/components/testAos";
-import Testaudio from "@/components/testaudio";
-import Image from "next/image";
+import TestMagicMenu from "@/components/testMagicMenu";
 
 export default function Home() {
   return (
     <div>
       <TestAos />
       <Draggable />
-      <Testaudio />
+
+      <div>............</div>
+      <TestMagicMenu />
     </div>
   );
 }

@@ -1,32 +1,86 @@
-import { ReactNode } from "react";
-import { FaHome } from "react-icons/fa";
+"use client";
+import { Span } from "next/dist/trace";
+import { Dispatch, ReactNode, SetStateAction, useState } from "react";
+import { FaHome, FaUser } from "react-icons/fa";
+import { IoMdPhotos } from "react-icons/io";
+import { IoSettings } from "react-icons/io5";
+import { LuMessageCircleMore } from "react-icons/lu";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type MenuDivProps = {
   icon: ReactNode;
   name: string;
+  pathname: string;
+  onClick: (name: string) => void;
+  isActive?: boolean;
+  link: string;
 };
+const menuList = [
+  {
+    name: "Home",
+    icon: <FaHome />,
+    link: "home",
+  },
+  {
+    name: "Photo",
+    icon: <IoMdPhotos />,
+    link: "photo",
+  },
+  {
+    name: "Message",
+    icon: <LuMessageCircleMore />,
+    link: "message",
+  },
+  {
+    name: "Setting",
+    icon: <IoSettings />,
+    link: "setting",
+  },
+];
 const MobileMagicOne = () => {
+  const [active, setActive] = useState("Home");
+  const pathname = usePathname();
+
   return (
-    <div className="hidden max-sm:grid">
-      <ul className="outline-1 max-sm:flex  justify-between mx-10gap-3  bg-amber-200 px-10 py-2">
-        <MenuDiv name={"Home"} icon={<FaHome />} />
-        <MenuDiv name={"Home"} icon={<FaHome />} />
-        <MenuDiv name={"Home"} icon={<FaHome />} />
-        <MenuDiv name={"Home"} icon={<FaHome />} />
-        <MenuDiv name={"Home"} icon={<FaHome />} />
-      </ul>
+    <div className="flex justify-center ">
+      <div className="navigation">
+        <ul className="">
+          {menuList.map((nav) => (
+            <MenuDiv
+              key={nav.name}
+              name={nav.name}
+              icon={nav.icon}
+              onClick={() => setActive(nav.name)}
+              pathname={pathname}
+              link={nav.link}
+            />
+          ))}
+        </ul>
+        <div className="indicator"></div>
+      </div>
     </div>
   );
 };
 
-const MenuDiv = ({ icon, name }: MenuDivProps) => {
+const MenuDiv = ({ icon, name, onClick, pathname, link }: MenuDivProps) => {
+  const isActive = pathname === link;
+  console.log("link : ", link);
+  console.log("pathname :", pathname);
   return (
-    <li>
-      <a href="">
-        <span className="flex justify-center">{icon}</span>
-        <span>{name}</span>
-      </a>
+    <li className="list ">
+      <Link href={link} className="" onClick={() => onClick(name)}>
+        {!isActive ? (
+          <span className="icon">{icon}</span>
+        ) : (
+          <div className="bg-red-400">
+            <span className="icon">{icon}</span>
+          </div>
+        )}
+        <span className="text">{name}</span>
+      </Link>
     </li>
   );
 };
+
 export default MobileMagicOne;
