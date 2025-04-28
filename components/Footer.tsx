@@ -24,7 +24,7 @@ const Footer = () => {
   }, [lastScrollY]);
 
   return (
-    <div className=" fixed bottom-0 w-full   outline-1 bg-amber-200">
+    <div className=" fixed bottom-0 w-full   outline-1 bg-background backdrop-blur-xs">
       {hideFooter && <MobileMagicOne />}
     </div>
   );

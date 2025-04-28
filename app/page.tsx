@@ -1,6 +1,3 @@
-import Draggable from "@/components/drag-drop";
-import TestAos from "@/components/testAos";
-
 type Post = {
   userId: number;
   id: number;
@@ -18,11 +15,11 @@ const getPost = async (): Promise<Post[]> => {
 export default async function Home() {
   const data = await getPost();
   return (
-    <div className="overflow-scroll">
-      <TestAos />
-      <Draggable />
+    <div className="overflow-scroll px-4 ">
       {data.map((item) => (
-        <pre key={item.id}>{item.title}</pre>
+        <p className="break-word" key={item.id}>
+          {item.title}
+        </p>
       ))}
     </div>
   );

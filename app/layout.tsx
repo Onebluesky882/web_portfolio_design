@@ -39,7 +39,7 @@ export default function RootLayout({
         >
           <UseCustomHooks>
             <Header />
-            {children}
+            <main className="overflow-x-hidden"> {children}</main>
             <Footer />
           </UseCustomHooks>
         </ThemeProvider>

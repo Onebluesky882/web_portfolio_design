@@ -73,7 +73,7 @@ const MenuDiv = ({ icon, name, onClick, pathname, link }: MenuDivProps) => {
         {!isActive ? (
           <span className="icon">{icon}</span>
         ) : (
-          <div className="bg-red-400 py-5 px-5 rounded-full">
+          <div className="bg-[#f68db4] py-5 px-5 rounded-full  ">
             <span className="icon">{icon}</span>
           </div>
         )}

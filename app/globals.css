@@ -162,11 +162,18 @@
   text-align: center;
   transition: 0.5s;
   color: black;
+  cursor: pointer;
 }
 
 .navigation ul li:hover a .icon {
   /* padding: 20px; */
   transform: translateY(-30px);
+  color: #ab90ea;
+}
+.navigation ul li:active a .icon {
+  /* padding: 20px; */
+  transform: translateY(-30px);
+  color: #ab90ea;
 }
 .navigation ul li a .text {
   position: absolute;
@@ -181,4 +188,10 @@
 .navigation ul li:hover a .text {
   opacity: 1;
   transform: translateY(0px);
+  color: #ab90ea;
+}
+.navigation ul li:active a .text {
+  opacity: 1;
+  transform: translateY(0px);
+  color: #f578a8;
 }
