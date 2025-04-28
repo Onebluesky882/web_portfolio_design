@@ -20,26 +20,26 @@ const menuList = [
   {
     name: "Home",
     icon: <FaHome />,
-    link: "home",
+    link: "/",
   },
   {
     name: "Photo",
     icon: <IoMdPhotos />,
-    link: "photo",
+    link: "/photo",
   },
   {
     name: "Message",
     icon: <LuMessageCircleMore />,
-    link: "message",
+    link: "/message",
   },
   {
     name: "Setting",
     icon: <IoSettings />,
-    link: "setting",
+    link: "/setting",
   },
 ];
 const MobileMagicOne = () => {
-  const [active, setActive] = useState("Home");
+  const [active, setActive] = useState("/");
   const pathname = usePathname();
 
   return (
@@ -65,7 +65,7 @@ const MobileMagicOne = () => {
 
 const MenuDiv = ({ icon, name, onClick, pathname, link }: MenuDivProps) => {
   const isActive = pathname === link;
-  console.log("link : ", link);
+  console.log("link :", link);
   console.log("pathname :", pathname);
   return (
     <li className="list ">
