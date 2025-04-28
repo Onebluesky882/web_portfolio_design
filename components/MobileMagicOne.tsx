@@ -1,6 +1,6 @@
 "use client";
-import { Span } from "next/dist/trace";
-import { Dispatch, ReactNode, SetStateAction, useState } from "react";
+
+import { ReactNode, useState } from "react";
 import { FaHome, FaUser } from "react-icons/fa";
 import { IoMdPhotos } from "react-icons/io";
 import { IoSettings } from "react-icons/io5";
@@ -73,7 +73,7 @@ const MenuDiv = ({ icon, name, onClick, pathname, link }: MenuDivProps) => {
         {!isActive ? (
           <span className="icon">{icon}</span>
         ) : (
-          <div className="bg-red-400">
+          <div className="bg-red-400 py-5 px-5 rounded-full">
             <span className="icon">{icon}</span>
           </div>
         )}

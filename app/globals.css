@@ -125,8 +125,6 @@
 }
 .navigation {
   position: relative;
-
-  background-color: rgb(192, 221, 250);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,7 +175,6 @@
   /*   letter-spacing: 0.05em; */
   transition: 0.5s;
   top: 10px;
-
   opacity: 0;
   transform: translateY(20px);
 }
