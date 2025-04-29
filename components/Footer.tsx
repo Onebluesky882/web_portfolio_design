@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import MobileMagicOne from "./MobileMagicOne";
+import MobileMagicOne from "./MenuMobile/MobileMagicOne";
+import NavigationTwo from "./MenuMobile/Menu-Indicator";
 
 const Footer = () => {
   const [hideFooter, setHideFooter] = useState(true);
@@ -24,8 +25,8 @@ const Footer = () => {
   }, [lastScrollY]);
 
   return (
-    <div className=" fixed bottom-0 w-full   outline-1 bg-background backdrop-blur-xs">
-      {hideFooter && <MobileMagicOne />}
+    <div className=" fixed bottom-0 w-full  bg-background backdrop-blur-xs">
+      {hideFooter && <NavigationTwo />}
     </div>
   );
 };

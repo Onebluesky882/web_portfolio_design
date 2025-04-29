@@ -2,39 +2,56 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaUser } from "react-icons/fa";
+import { usePathname } from "next/navigation";
+import { IoMdPhotos } from "react-icons/io";
+import { IoSettings } from "react-icons/io5";
+import { BiSolidMessageAltDetail } from "react-icons/bi";
 
 const NavigationTwo = () => {
+  const pathname = usePathname();
   const Menus = [
     {
       name: "Home",
       icon: <FaHome className="text-white" />,
       dis: "translate-x-0",
+      path: "/",
     },
     {
       name: "Profile",
-      icon: <FaHome className="text-white" />,
+      icon: <FaUser className="text-white" />,
       dis: "translate-x-16",
+      path: "profile",
     },
     {
       name: "Message",
-      icon: <FaHome className="text-white" />,
+      icon: <BiSolidMessageAltDetail className="text-white" />,
       dis: "translate-x-32",
+      path: "message",
     },
     {
       name: "Photos",
-      icon: <FaHome className="text-white" />,
+      icon: <IoMdPhotos className="text-white" />,
       dis: "translate-x-48",
+      path: "photos",
     },
     {
-      name: "setting",
-      icon: <FaHome className="text-white" />,
+      name: "Setting",
+      icon: <IoSettings className="text-white" />,
       dis: "translate-x-64",
+      path: "setting",
     },
   ];
+  console.log("pathname :", pathname);
+
   const [active, setActive] = useState(0);
+
+  const handleSubmit = (index: number) => {
+    console.log();
+    setActive(index);
+  };
   return (
-    <div className="flex bg-white p-50">
+    <div className="hidden max-sm:grid  justify-center bg-blue-400 border-t-[4px] border-solid border-white">
       <div className="bg-blue-400 max-h-[4.4rem] px-6 rounded-t-xl ">
         <ul className="flex relative">
           <span
@@ -50,7 +67,7 @@ const NavigationTwo = () => {
               <Link
                 href="#"
                 className="cursor-pointer flex items-center pt-6 flex-col"
-                onClick={() => setActive(i)}
+                onClick={() => handleSubmit(i)}
               >
                 <span
                   className={`flex duration-500 z-10  ${
@@ -61,9 +78,9 @@ const NavigationTwo = () => {
                 </span>
 
                 <span
-                  className={`text-black   ${
+                  className={`text-white text-sm  ${
                     active === i
-                      ? "translate-y-5 duration-600 opacity-100 "
+                      ? "translate-y-5 mt-1 duration-600 opacity-100 "
                       : "opacity-0 translate-y-10"
                   } `}
                 >

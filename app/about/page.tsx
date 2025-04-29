@@ -1,4 +1,4 @@
-import NavigationTwo from "@/components/Menu-Indicator";
+import NavigationTwo from "@/components/MenuMobile/Menu-Indicator";
 
 const getData = async () => {
   // call api if have return res.json()
