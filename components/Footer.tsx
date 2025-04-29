@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import MobileMagicOne from "./MenuMobile/MobileMagicOne";
 import NavigationTwo from "./MenuMobile/Menu-Indicator";
+import DrawerMenu from "./MenuMobile/Drawer-menu";
 
 const Footer = () => {
   const [hideFooter, setHideFooter] = useState(true);
@@ -26,7 +27,7 @@ const Footer = () => {
 
   return (
     <div className=" fixed bottom-0 w-full  bg-background backdrop-blur-xs">
-      {hideFooter && <NavigationTwo />}
+      {hideFooter && <DrawerMenu />}
     </div>
   );
 };

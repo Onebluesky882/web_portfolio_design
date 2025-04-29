@@ -51,7 +51,7 @@ const NavigationTwo = () => {
     setActive(index);
   };
   return (
-    <div className="hidden max-sm:grid  justify-center bg-blue-400 border-t-[4px] border-solid border-white">
+    <div className="hidden max-sm:flex justify-center bg-blue-400 border-t-[4px] border-solid border-white">
       <div className="bg-blue-400 max-h-[4.4rem] px-6 rounded-t-xl ">
         <ul className="flex relative">
           <span
