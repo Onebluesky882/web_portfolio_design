@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./ModeToggle";
 import Image from "next/image";
+import { useToggleDrawer } from "@/app/store/useDrawerToggle";
 
 const Header = () => {
   const [scroll, setScroll] = useState(false);
-
+  const { toggleDrawer, setToggleDrawer } = useToggleDrawer();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -20,7 +21,7 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  console.log("toggleDrawer :", toggleDrawer);
   return (
     <div
       className={`grid grid-cols-5    items-center py-2 px-5 sticky top-0 bg-background ${
@@ -37,7 +38,7 @@ const Header = () => {
         />
       </div>
       <div className="col-span-2 mt-1 items-center flex">
-        <InputElement />{" "}
+        <InputElement /> <button onClick={setToggleDrawer}>open drawer</button>
       </div>
       <div className="flex items-center gap-1 px-1  col-span-2   justify-end">
         <ButtonHeader /> <ModeToggle />{" "}

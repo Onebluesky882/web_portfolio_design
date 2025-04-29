@@ -1,5 +1,3 @@
-import NavigationTwo from "@/components/MenuMobile/Menu-Indicator";
-
 const getData = async () => {
   // call api if have return res.json()
   const res = await fetch(
@@ -12,12 +10,9 @@ const getData = async () => {
 };
 
 export default async function Page() {
-  // get data from function getData
-  const data = await getData();
-  console.log("data :", data);
   return (
     <div>
-      <NavigationTwo />
+      <button>about</button>
     </div>
   );
 }
