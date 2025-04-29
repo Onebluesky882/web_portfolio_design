@@ -44,6 +44,9 @@
 }
 
 :root {
+  /* --my-shadow-1 for menu indicator */
+  --my-shadow-left: 4.1px -5px 0 0 rgb(255, 255, 255);
+  --my-shadow-right: -4.1px -5px 0 0 rgb(255, 255, 255);
   --radius: 0.3rem;
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(240, 5%, 14%);
