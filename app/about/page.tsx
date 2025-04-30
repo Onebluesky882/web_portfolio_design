@@ -1,3 +1,5 @@
+import ToastTester from "@/components/test-toast";
+
 const getData = async () => {
   // call api if have return res.json()
   const res = await fetch(
@@ -12,6 +14,7 @@ const getData = async () => {
 export default async function Page() {
   return (
     <div>
+      <ToastTester />
       <button>about</button>
     </div>
   );

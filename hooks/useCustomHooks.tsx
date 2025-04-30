@@ -1,7 +1,7 @@
 "use client";
 import useAos from "./useAos";
 
-export const UseCustomHooks = ({ children }: React.PropsWithChildren) => {
+export const UseAnimate = ({ children }: React.PropsWithChildren) => {
   useAos();
 
   return <>{children}</>;

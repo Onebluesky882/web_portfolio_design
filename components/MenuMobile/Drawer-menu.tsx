@@ -15,12 +15,14 @@ import { useToggleDrawer } from "@/app/store/useDrawerToggle";
 
 const DrawerMenu = () => {
   const i = Array.from({ length: 10 });
-  const { toggleDrawer } = useToggleDrawer();
-  console.log("footer : toggleDrawer : ", toggleDrawer);
+  const { toggleDrawer, setToggleDrawer } = useToggleDrawer();
+  console.log(toggleDrawer);
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <>
       <div className="cursor-grab active:cursor-grabbing">
-        <Drawer open={toggleDrawer}>
+        <Drawer open={toggleDrawer} onOpenChange={setToggleDrawer}>
           <DrawerTrigger asChild>
             <Button variant="outline">Open Drawer</Button>
           </DrawerTrigger>

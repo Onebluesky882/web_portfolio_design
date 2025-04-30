@@ -21,7 +21,7 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  console.log("toggleDrawer :", toggleDrawer);
+
   return (
     <div
       className={`grid grid-cols-5    items-center py-2 px-5 sticky top-0 bg-background ${
